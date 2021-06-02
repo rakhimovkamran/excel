@@ -1,0 +1,32 @@
+@import "../mixins";
+@import "../variables";
+
+.app__toolbar {
+    position: absolute;
+    top: $header_height;
+    right: 0;
+    left: 0;
+
+    height: $toolbar_height;
+
+    border-bottom: 1px solid $border_color;
+    border-top: 1px solid $border_color;
+
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+
+    .button {
+        @include button(green);
+    }
+
+    .toolbar_separator {
+        color: $border_color;
+        user-select: none;
+
+        margin-right: 10px;
+        margin-left: 10px;
+        font-weight: 300;
+        font-size: 19px;
+    }
+}
