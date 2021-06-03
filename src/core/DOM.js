@@ -79,9 +79,11 @@ class DOM {
 
     addClass(className) {
         this.$element.classList.add(className);
+        return this;
     }
     removeClass(className) {
         this.$element.classList.remove(className);
+        return this;
     }
 
     focus() {
