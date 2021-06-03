@@ -29,6 +29,29 @@
         border-top: none;
 
         background: #f8f9fa;
+
+        position: relative;
+
+        &-resize {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+
+            height: 1px;
+            opacity: 0;
+            background: $primary_blue_color;
+
+            transition: opacity 0.2s;
+            z-index: 1000;
+
+            cursor: row-resize;
+
+            &:hover {
+                height: 3px;
+                opacity: 1;
+            }
+        }
     }
 
     .row_data {
@@ -48,6 +71,29 @@
         border: 1px solid $border_color;
         border-top: none;
         border-left: none;
+
+        position: relative;
+
+        &_resize {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            top: 0;
+
+            width: 1px;
+            opacity: 0;
+            background: $primary_blue_color;
+
+            transition: opacity 0.2s;
+            z-index: 1000;
+
+            cursor: col-resize;
+
+            &:hover {
+                width: 3px;
+                opacity: 1;
+            }
+        }
     }
 
     .cell {
@@ -68,12 +114,12 @@
         color: #111;
         white-space: nowrap;
 
-        transition: all 0.2s;
+        transition: outline 0.2s;
         outline: none;
 
         &.selected {
             border: none;
-            outline: 2px solid #3c74ff;
+            outline: 2px solid $primary_blue_color;
             z-index: 2;
         }
     }
