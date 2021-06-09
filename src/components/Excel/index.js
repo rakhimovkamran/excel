@@ -1,18 +1,24 @@
 import { $ } from "@core/DOM";
-import { Observer } from "../../core/Observer";
+import { Observer } from "@core/Observer";
+import { StoreSubscriber } from "@core/storeSubscriber";
 
 export class Excel {
     constructor(selector, options) {
         this.$element = $(selector);
         this.components = options.components || [];
 
+        this.store = options.store;
         this.observer = new Observer();
+
+        this.subscriber = new StoreSubscriber(this.store);
     }
 
     getRoot() {
         const $root = $.create("div", "app");
+
         const componentOptions = {
             observer: this.observer,
+            store: this.store,
         };
 
         this.components = this.components.map((Component) => {
@@ -30,6 +36,8 @@ export class Excel {
 
     render() {
         this.$element.append(this.getRoot());
+        this.subscriber.subscribeComponents(this.components);
+
         this.components.forEach((component) => {
             component.init();
         });
@@ -37,5 +45,6 @@ export class Excel {
 
     destroy() {
         this.components.forEach((component) => component.destroy());
+        this.subscriber.unsubscribeFromStore();
     }
 }

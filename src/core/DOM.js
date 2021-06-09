@@ -16,7 +16,7 @@ class DOM {
     }
 
     text(content) {
-        if (typeof content === "string") {
+        if (typeof content !== "undefined") {
             this.$element.textContent = content;
             return this;
         }
@@ -77,6 +77,14 @@ class DOM {
         );
     }
 
+    getStyles(styles = []) {
+        return styles.reduce((res, s) => {
+            res[s] = this.$element.style[s];
+
+            return res;
+        }, {});
+    }
+
     addClass(className) {
         this.$element.classList.add(className);
         return this;
@@ -89,6 +97,15 @@ class DOM {
     focus() {
         this.$element.focus();
         return this;
+    }
+
+    attr(name, value) {
+        if (value) {
+            this.$element.setAttribute(name, value);
+            return this;
+        }
+
+        return this.$element.getAttribute(name);
     }
 
     id(parse) {
