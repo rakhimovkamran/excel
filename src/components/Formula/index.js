@@ -1,5 +1,5 @@
 import { ExcelComponent } from "@core/ExcelComponent";
-import { $ } from "../../core/DOM";
+import { $ } from "@core/DOM";
 
 export class Formula extends ExcelComponent {
     static className = "app__formula";
@@ -8,6 +8,7 @@ export class Formula extends ExcelComponent {
         super($root, {
             name: "Formula",
             listeners: ["input", "keydown"],
+            subscribe: ["currentText"],
             ...options,
         });
     }
@@ -18,11 +19,7 @@ export class Formula extends ExcelComponent {
         this.$formula = this.$root.find('[data-item="formula_input"]');
 
         this.$on("table:select", (selected) => {
-            this.$formula.text(selected.text());
-        });
-
-        this.$on("table:input", (selected) => {
-            this.$formula.text(selected.text());
+            this.$formula.text(selected.data.value);
         });
     }
 
@@ -34,6 +31,10 @@ export class Formula extends ExcelComponent {
                 contenteditable spellcheck="false"
             ></div>
         `;
+    }
+
+    storeChanged({ currentText }) {
+        this.$formula.text(currentText);
     }
 
     onInput(event) {
