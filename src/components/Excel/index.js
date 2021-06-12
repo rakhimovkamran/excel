@@ -1,6 +1,6 @@
-import { $ } from "@core/DOM";
-import { Observer } from "@core/Observer";
-import { StoreSubscriber } from "@core/storeSubscriber";
+import { $ } from "@core/DOM/DOM";
+import { Observer } from "@core/observer/Observer";
+import { StoreSubscriber } from "@core/store/storeSubscriber";
 
 export class Excel {
     constructor(options) {

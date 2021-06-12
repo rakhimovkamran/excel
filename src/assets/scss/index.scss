@@ -4,12 +4,12 @@
 @import "variables";
 @import "mixins";
 
-@import "./app/toolbar";
-@import "./app/formula";
-@import "./app/header";
-@import "./app/table";
+@import "app/toolbar";
+@import "app/formula";
+@import "app/header";
+@import "app/table";
 
-@import "./dashboard/index.scss";
+@import "dashboard/index";
 
 * {
     box-sizing: border-box;

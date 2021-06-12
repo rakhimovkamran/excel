@@ -1,4 +1,4 @@
-import { ExcelComponent } from "@core/ExcelComponent";
+import { ExcelComponent } from "@core/root/ExcelComponent";
 
 export class ExcelStateComponent extends ExcelComponent {
     constructor(...args) {

@@ -1,5 +1,5 @@
-import { $ } from "@core/DOM";
-import { ActiveRoute } from "@core/routes/ActiveRoute";
+import { $ } from "../DOM/DOM";
+import { ActiveRoute } from "./ActiveRoute";
 
 export class Router {
     constructor(selector, routes) {
@@ -21,8 +21,6 @@ export class Router {
 
     changePageHandler() {
         this.currentPage && this.currentPage.destroy();
-
-        console.log("I wotk, but you dont notice thats ");
 
         const Page = !ActiveRoute.path.includes("excel")
             ? this.routes.dashboard

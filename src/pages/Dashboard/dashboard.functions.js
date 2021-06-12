@@ -1,4 +1,4 @@
-import { storage } from "@core/utils";
+import { storage } from "@core/utils/utils";
 
 function toHTML(key) {
     const id = key.split(":")[1];

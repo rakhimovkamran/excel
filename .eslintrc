@@ -3,7 +3,9 @@
     "env": {
         "es6": true,
         "browser": true,
-        "node": true
+        "node": true,
+        "jest/globals": true,
+        "jest": true
     },
 
     "rules": {
@@ -17,5 +19,7 @@
         "max-len": "off"
     },
 
-    "extends": ["eslint:recommended", "google"]
+    "extends": ["eslint:recommended", "google"],
+    "plugins": ["jest"]
+
 }
