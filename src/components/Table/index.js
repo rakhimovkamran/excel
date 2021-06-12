@@ -1,15 +1,15 @@
-import { ExcelComponent } from "@core/ExcelComponent";
+import { ExcelComponent } from "@core/root/ExcelComponent";
 
 import { isCell, matrix, nextSelector, shouldResize } from "./table.functions";
 import { TableSelection } from "./TableSelection";
 import { createTable } from "./table.template";
 import { resizeHandler } from "./table.resize";
-import { $ } from "@core/DOM";
+import { $ } from "@core/DOM/DOM";
 
 import * as actions from "@/store/actions";
 import { defaultStyles } from "@/constants";
 import { applyStyle, changeStyles } from "@/store/actions";
-import { parse } from "@core/parse";
+import { parse } from "@core/utils/parse";
 
 export class Table extends ExcelComponent {
     static className = "app__table";

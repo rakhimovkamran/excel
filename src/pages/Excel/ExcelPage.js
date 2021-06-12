@@ -1,4 +1,4 @@
-import { Page } from "@core/Page";
+import { Page } from "@core/router/Page";
 
 import { Toolbar } from "@/components/Toolbar";
 import { Formula } from "@/components/Formula";
@@ -6,11 +6,11 @@ import { Header } from "@/components/Header";
 import { Excel } from "@/components/Excel";
 import { Table } from "@/components/Table";
 
-import { Store } from "@core/Store";
+import { Store } from "@core/store";
 import { rootReducer } from "@/store/rootReducer";
 import { normalizeInitialState } from "@/store/initialState";
 
-import { debounce, storage } from "@core/utils";
+import { debounce, storage } from "@core/utils/utils";
 
 const storageName = (param) => `excel:${param}`;
 

@@ -1,4 +1,4 @@
-import { clone } from "@core/utils";
+import { clone } from "@core/utils/utils";
 import { defaultStyles } from "@/constants";
 
 const defaultState = {
