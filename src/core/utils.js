@@ -54,3 +54,9 @@ export function debounce(fn, wait) {
         timeout = setTimeout(later, wait);
     };
 }
+
+export function clone(obj = {}) {
+    return JSON.parse(JSON.stringify(obj));
+}
+
+export const leadingZero = (str) => (str.length >= 2 ? str : `0${str}`);
