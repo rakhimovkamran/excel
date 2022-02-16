@@ -12,7 +12,7 @@ export class Observer {
     }
 
     subscribe(event, callback) {
-        this.listeners[event] = this.listeners[event] || [];
+        this.listeners[event] = this.listeners[event] ?? [];
         this.listeners[event].push(callback);
 
         return () => {
